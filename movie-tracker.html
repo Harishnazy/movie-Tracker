@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Tracker - Manage Your Watchlist</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🎬 Movie Tracker</h1>
+        <p>Organize and manage your personal watchlist with ease</p>
+      </div>
+
+      <div class="main-content">
+        <!-- Alert Messages -->
+        <div id="alert-container"></div>
+
+        <!-- Add Movie Form -->
+        <div class="form-section">
+          <h2>
+            <span>➕</span>
+            <span id="form-title">Add New Movie</span>
+          </h2>
+
+          <form id="movie-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="movie-image">Movie Image URL</label>
+                <input
+                  type="url"
+                  id="movie-image"
+                  placeholder="https://example.com/movie-poster.jpg"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="movie-title">Title *</label>
+                <input
+                  type="text"
+                  id="movie-title"
+                  placeholder="Enter movie title"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="movie-season">Season</label>
+                <input
+                  type="number"
+                  id="movie-season"
+                  placeholder="Season number"
+                  min="1"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="movie-episode">Episode</label>
+                <input
+                  type="number"
+                  id="movie-episode"
+                  placeholder="Episode number"
+                  min="1"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="movie-status">Status *</label>
+                <select id="movie-status" required>
+                  <option value="">Select status</option>
+                  <option value="watching">Watching</option>
+                  <option value="completed">Completed</option>
+                  <option value="on-hold">On Hold</option>
+                  <option value="dropped">Dropped</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="movie-genre">Genre *</label>
+                <select id="movie-genre" required>
+                  <option value="">Select genre</option>
+                  <option value="action">Action</option>
+                  <option value="anime">Anime</option>
+                  <option value="comedy">Comedy</option>
+                  <option value="drama">Drama</option>
+                  <option value="horror">Horror</option>
+                  <option value="romance">Romance</option>
+                  <option value="sci-fi">Sci-Fi</option>
+                  <option value="thriller">Thriller</option>
+                  <option value="documentary">Documentary</option>
+                  <option value="fantasy">Fantasy</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="form-submit-btn">
+              <span>➕</span>
+              <span id="submit-text">Add Movie</span>
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="cancel-edit-btn"
+              style="display: none; margin-left: 10px"
+            >
+              <span>❌</span>
+              Cancel
+            </button>
+          </form>
+        </div>
+
+        <!-- Watchlist Section -->
+        <div class="watchlist-section">
+          <h2>📚 Your Watchlist</h2>
+
+          <!-- Statistics -->
+          <div class="stats-bar" id="stats-bar">
+            <div class="stat-item">
+              <div class="stat-number" id="total-movies">0</div>
+              <div class="stat-label">Total Movies</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="watching-count">0</div>
+              <div class="stat-label">Watching</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="completed-count">0</div>
+              <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="on-hold-count">0</div>
+              <div class="stat-label">On Hold</div>
+            </div>
+          </div>
+
+          <!-- Movies Grid -->
+          <div id="movies-container">
+            <div class="empty-state" id="empty-state">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <h3>No movies in your watchlist yet</h3>
+              <p>Add your first movie above to get started!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
