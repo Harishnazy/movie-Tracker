@@ -42,12 +42,44 @@ body {
   padding: 40px;
 }
 
+.toggle-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.toggle-btn {
+  font-size: 1.1rem;
+  padding: 16px 32px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 .form-section {
   background: #f8f9fa;
   padding: 30px;
   border-radius: 15px;
   margin-bottom: 30px;
   border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.form-section.hidden {
+  max-height: 0;
+  padding: 0 30px;
+  margin-bottom: 0;
+  opacity: 0;
+}
+
+.form-section.visible {
+  max-height: 1000px;
+  opacity: 1;
 }
 
 .form-section h2 {
