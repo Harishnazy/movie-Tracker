@@ -10,6 +10,10 @@ const emptyState = document.getElementById("empty-state");
 const formTitle = document.getElementById("form-title");
 const submitText = document.getElementById("submit-text");
 const cancelBtn = document.getElementById("cancel-edit-btn");
+const formSection = document.getElementById("form-section");
+const toggleBtn = document.getElementById("toggle-form-btn");
+const toggleIcon = document.getElementById("toggle-icon");
+const toggleText = document.getElementById("toggle-text");
 
 // Form elements
 const imageInput = document.getElementById("movie-image");
@@ -24,6 +28,36 @@ const totalMoviesEl = document.getElementById("total-movies");
 const watchingCountEl = document.getElementById("watching-count");
 const completedCountEl = document.getElementById("completed-count");
 const onHoldCountEl = document.getElementById("on-hold-count");
+
+/**
+ * Toggle form visibility
+ */
+function toggleForm() {
+  const isVisible = !formSection.classList.contains("hidden");
+  
+  if (isVisible) {
+    // Hide form
+    formSection.classList.add("hidden");
+    formSection.classList.remove("visible");
+    toggleIcon.textContent = "➕";
+    toggleText.textContent = "Add New Movie";
+    toggleBtn.classList.remove("btn-danger");
+    toggleBtn.classList.add("btn-primary");
+  } else {
+    // Show form
+    formSection.classList.remove("hidden");
+    formSection.classList.add("visible");
+    toggleIcon.textContent = "❌";
+    toggleText.textContent = "Close Form";
+    toggleBtn.classList.remove("btn-primary");
+    toggleBtn.classList.add("btn-danger");
+    
+    // Scroll to form
+    setTimeout(() => {
+      formSection.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }
+}
 
 /**
  * Initialize the application
@@ -75,6 +109,14 @@ function clearForm() {
   cancelBtn.style.display = "none";
   document.getElementById("form-submit-btn").innerHTML =
     "<span>➕</span><span>Add Movie</span>";
+  
+  // Hide form and reset toggle button
+  formSection.classList.add("hidden");
+  formSection.classList.remove("visible");
+  toggleIcon.textContent = "➕";
+  toggleText.textContent = "Add New Movie";
+  toggleBtn.classList.remove("btn-danger");
+  toggleBtn.classList.add("btn-primary");
 }
 
 /**
@@ -333,6 +375,7 @@ function animateCount(element, target) {
 // Event Listeners
 form.addEventListener("submit", addOrUpdateMovie);
 cancelBtn.addEventListener("click", cancelEdit);
+toggleBtn.addEventListener("click", toggleForm);
 
 // Initialize the application when the page loads
 document.addEventListener("DOMContentLoaded", init);
