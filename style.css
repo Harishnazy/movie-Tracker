@@ -6,7 +6,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #070F2B 0%, #9290C3 100%);
   min-height: 100vh;
   padding: 20px;
 }
@@ -14,14 +14,14 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.95);
+  background: #1B1A55;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
 .header {
-  background: linear-gradient(135deg, #ff6b6b, #feca57);
+  background: linear-gradient(135deg, #535C91, #070F2B);
   color: white;
   padding: 30px;
   text-align: center;
@@ -34,12 +34,13 @@ body {
 }
 
 .header p {
+  color: #dedede;
   font-size: 1.1rem;
-  opacity: 0.9;
+  opacity: 1.9;
 }
 
 .main-content {
-  padding: 40px;
+  padding: 45px;
 }
 
 .toggle-section {
@@ -48,9 +49,9 @@ body {
 }
 
 .toggle-btn {
-  font-size: 1.1rem;
-  padding: 16px 32px;
-  border-radius: 50px;
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  border-radius: 100px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
@@ -61,11 +62,11 @@ body {
 }
 
 .form-section {
-  background: #f8f9fa;
+  background: #9290C3;
   padding: 30px;
   border-radius: 15px;
   margin-bottom: 30px;
-  border: 2px solid #e9ecef;
+  border: 2px solid #535C91;
   transition: all 0.3s ease;
   overflow: hidden;
 }
@@ -143,12 +144,12 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #3498db, #2980b9);
+  background: linear-gradient(135deg, #9290C3, #070F2B);
   color: white;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #2980b9, #1f4e79);
+  background: linear-gradient(135deg, #070F3B, #9290C3);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
 }
@@ -200,14 +201,14 @@ body {
 }
 
 .watchlist-section {
-  background: white;
+  background: #535C91;
   border-radius: 15px;
   padding: 30px;
-  border: 2px solid #e9ecef;
+  border: 2px solid #535C91;
 }
 
 .watchlist-section h2 {
-  color: #2c3e50;
+  color: #b7b5f7;
   margin-bottom: 25px;
   font-size: 1.8rem;
 }
@@ -219,10 +220,10 @@ body {
 }
 
 .movie-card {
-  background: linear-gradient(145deg, #ffffff, #f5f6fa);
+  background: linear-gradient(145deg, #b7b5f7, #b7b5f7);
   border-radius: 15px;
   padding: 20px;
-  border: 2px solid #e9ecef;
+  border: 2px solid #b7b5f7;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
